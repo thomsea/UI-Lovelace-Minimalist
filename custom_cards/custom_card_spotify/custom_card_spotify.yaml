@@ -1,0 +1,39 @@
+---
+### Adapted from Card Media Player With Controls ###
+toms_spotify:
+  variables:
+    ulm_card_media_player_with_controls_name: "No name set"
+    ulm_card_media_player_with_controls_entity:
+  triggers_update: "all"
+  styles:
+    grid:
+      - grid-template-areas: "'item1'"
+      - grid-template-columns: "100%"
+      - grid-template-rows: "min-content"
+      - row-gap: "12px"
+    card:
+      - border-radius: "var(--border-radius)"
+      - box-shadow: "var(--box-shadow)"
+      - padding: "6px"
+      - margin: "0px"
+    name:
+      - display: none
+    label:
+      - display: none
+    icon:
+      - display: none
+    image_cell:
+      - display: none
+  custom_fields:
+    item1:
+      card:
+        type: custom:spotify-card
+        limit: 8
+        playlist_type: default
+        account: default
+        spotify_entity: media_player.master_player
+        hide_currently_playing: true
+        hide_playback_controls: true
+        hide_top_header: true
+        display_style: grid
+        grid_covers_per_row: '4'
